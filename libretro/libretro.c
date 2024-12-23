@@ -787,16 +787,16 @@ void retro_cheat_set(unsigned index, bool enabled, const char* code)
    switch (cheat_parse(index, code))
    {
    case CheatErrorTooMany:
-      show_warning_message("Too many active cheats!", 2500);
+      show_warning_message("金手指开启数量太多!", 2500);
       break;
    case CheatErrorTooBig:
-      show_warning_message("Cheats are too big!", 2500);
+      show_warning_message("金手指太大了!", 2500);
       break;
    case CheatErrorEncrypted:
-      show_warning_message("Encrypted cheats are not supported!", 2500);
+      show_warning_message("不支持加密的金手指!", 2500);
       break;
    case CheatErrorNotSupported:
-      show_warning_message("Cheat type is not supported!", 2500);
+      show_warning_message("不支持的金手指类型!", 2500);
       break;
    case CheatNoError:
       break;
@@ -1090,14 +1090,14 @@ bool retro_load_game(const struct retro_game_info* info)
      if (load_bios(filename_bios) != 0)
      {
         if (selected_bios == official_bios)
-          show_warning_message("Could not load BIOS image file, using built-in BIOS", 2500);
+          show_warning_message("无法加载 BIOS 映像文件，正在使用内置 BIOS", 2500);
         bios_loaded = false;
      }
 
      if (bios_loaded && bios_rom[0] != 0x18)
      {
         if (selected_bios == official_bios)
-          show_warning_message("BIOS image seems incorrect, using built-in BIOS", 2500);
+          show_warning_message("BIOS 镜像似乎不正确，使用内置 BIOS", 2500);
         bios_loaded = false;
      }
    }
