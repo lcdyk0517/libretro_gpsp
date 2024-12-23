@@ -56,22 +56,22 @@ struct retro_core_option_definition option_defs_us[] = {
    {
       "gpsp_bios",
       "BIOS",
-      "Choose the BIOS image to use. The official BIOS must be provided by the user. Using a non-official (or builtin) BIOS might result in incompatibility problems with some games. Best results are to be achieved with the official Nintendo BIOS.",
+      "选择要使用的 BIOS 映像。官方 BIOS 必须由用户提供。使用非官方（或内置）BIOS 可能会导致与某些游戏不兼容的问题。最佳效果是通过官方任天堂 BIOS 实现。",
       {
-         { "auto",      "Auto select" },
-         { "builtin",   "Builtin BIOS" },
-         { "official",  "Original BIOS" },
+         { "auto",      "自动选择" },
+         { "builtin",   "内置BIOS" },
+         { "official",  "原始BIOS" },
          { NULL, NULL },
       },
       "auto"
    },
    {
       "gpsp_boot_mode",
-      "Boot mode",
-      "Choose whether to boot the BIOS before the game or not. There's not much difference in either modes.",
+      "Boot模式",
+      "选择在游戏前启动BIOS与否。这两种模式下没有太大的区别。",
       {
-         { "game",      "Boot to game" },
-         { "bios",      "Boot to BIOS" },
+         { "game",      "启动游戏" },
+         { "bios",      "启动BIOS" },
          { NULL, NULL },
       },
       "game"
@@ -79,11 +79,11 @@ struct retro_core_option_definition option_defs_us[] = {
 #if defined(HAVE_DYNAREC)
    {
       "gpsp_drc",
-      "Dynamic Recompiler",
-      "Dynamically recompile CPU instructions to native instructions. Greatly improves performance, but may reduce accuracy.",
+      "动态重新编译",
+      "动态重新编译CPU指令到本地指令。大幅提升性能，但可能会降低准确性。",
       {
-         { "enabled",  NULL },
-         { "disabled", NULL },
+         { "enabled",  "开启" },
+         { "disabled", "关闭" },
          { NULL, NULL },
       },
       "enabled"
@@ -91,68 +91,68 @@ struct retro_core_option_definition option_defs_us[] = {
 #endif
    {
       "gpsp_sprlim",
-      "No Sprite Limit",
-      "Removes the original sprite-per-scanline hardware limit. Some games might rely on the hardware limit for proper rendering (ie. hiding some sprites).",
+      "移除精灵限制",
+      "删除原始每扫描行一个精灵的硬件限制。某些游戏可能依赖于硬件限制以正确渲染（例如隐藏某些精灵）。",
       {
-         { "disabled", NULL },
-         { "enabled",  NULL },
+         { "enabled",  "开启" },
+         { "disabled", "关闭" },
          { NULL, NULL },
       },
       "disabled"
    },
    {
       "gpsp_rtc",
-      "RTC support",
-      "Sets the RTC support for the emulated cartridge. Autodetect uses a ROM database that works with most commercial titles. You might need to force RTC when using homebrew or ROM hacks.",
+      "RTC支持",
+      "设置仿真卡带的 RTC 支持。自动检测使用与大多数商业标题兼容的 ROM 数据库。在使用自制软件或 ROM 补丁时，可能需要强制启用 RTC。",
       {
-         { "auto", NULL },
-         { "enabled",  NULL },
-         { "disabled", NULL },
+         { "auto",     "自动" },
+         { "enabled",  "开启" },
+         { "disabled", "关闭" },
          { NULL, NULL },
       },
       "auto"
    },
    {
       "gpsp_serial",
-      "Link Cable Connectivity",
-      "Configures the serial (Link Cable) connection. Automatic will pick up a reasonable support for most known games.",
+      "连接线缆",
+      "配置串行（连接线）连接。自动支持大多数已知游戏。",
       {
-         { "auto",     "Automatic" },
-         { "disabled", "Disabled" },
-         { "rfu",      "GBA Wireless Adapter" },
+         { "auto",     "自动" },
+         { "disabled", "关闭" },
+         { "rfu",      "GBA 无线适配器"},
          { NULL, NULL },
       },
       "auto"
    },
    {
       "gpsp_rumble",
-      "Rumble support",
-      "Sets the Rumble support for the emulated cartridge. Autodetect uses a ROM database that works with most commercial titles. You might want to force Rumble when using homebrew or ROM hacks that support it. You can also force-disable it if you don't like it.",
+      "震动支持",
+      "设置模拟卡带的振动支持。自动检测使用与大多数商业标题兼容的 ROM 数据库。您可能希望在使用支持振动的自制软件或 ROM 修改时强制启用振动。如果您不喜欢，还可以强制禁用它。",
       {
-         { "auto", NULL },
-         { "enabled",  NULL },
-         { "disabled", NULL },
+         { "auto", "自动" },
+         { "enabled",  "开启" },
+         { "disabled", "关闭" },
          { NULL, NULL },
       },
       "auto"
    },
    {
       "gpsp_frameskip",
-      "Frameskip",
-      "Skip frames to avoid audio buffer under-run (crackling). Improves performance at the expense of visual smoothness. 'Auto' skips frames when advised by the frontend. 'Auto (Threshold)' utilises the 'Frameskip Threshold (%)' setting. 'Fixed Interval' utilises the 'Frameskip Interval' setting.",
+      "跳帧",
+      "跳过帧以避免音频缓冲区运行不足（爆裂声）。以牺牲视觉平滑度为代价提高性能。当前端建议时，'自动'会跳过帧。 '自动 (阈值)'利用'跳帧阈值 (%)'设置。 '固定间隔'利用'跳帧间隔'设置。",
       {
-         { "disabled",       NULL },
-         { "auto",           "Auto" },
-         { "auto_threshold", "Auto (Threshold)" },
-         { "fixed_interval", "Fixed Interval" },
+         { "disabled",       "关闭" },
+         { "auto",           "自动" },
+         { "auto_threshold", "自动 (阈值)" },
+         { "fixed_interval", "固定间隔" },
          { NULL, NULL },
       },
       "disabled"
    },
    {
       "gpsp_frameskip_threshold",
-      "Frameskip Threshold (%)",
-      "When 'Frameskip' is set to 'Auto (Threshold)', specifies the audio buffer occupancy threshold (percentage) below which frames will be skipped. Higher values reduce the risk of crackling by causing frames to be dropped more frequently.",
+      "跳帧阈值(%)",
+      "当将'跳帧'设置为'自动 (阈值)'时，指定音频缓冲区占用阈值的百分比，低于该值将跳过帧。值越高，通过更频繁地丢弃帧来降低刺耳的可能性，从而降低爆裂风险。",
       {
          { "15", NULL },
          { "18", NULL },
@@ -176,8 +176,8 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       "gpsp_frameskip_interval",
-      "Frameskip Interval",
-      "When 'Frameskip' is set to 'Fixed Interval', the value set here is the number of frames omitted after a frame is rendered - i.e. '0' = 60fps, '1' = 30fps, '2' = 15fps, etc.",
+      "跳帧间隔",
+      "当将'跳帧'设置为'固定间隔'时，此处设置的值是在渲染一个帧后省略的帧数 - 即'0'表示 60fps，'1'表示 30fps，'2'表示 15fps 等。",
       {
          { "0",  NULL },
          { "1",  NULL },
@@ -196,31 +196,34 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       "gpsp_color_correction",
-      "Color Correction",
-      "Adjusts output colors to match the display of real GBA hardware.",
+      "色彩校正",
+      "调整输出颜色以匹配真实 GBA 硬件的显示。",
       {
-         { "enabled",  NULL },
-         { "disabled", NULL },
+         { "enabled",  "开启" },
+         { "disabled", "关闭" },
          { NULL, NULL },
       },
       "disabled"
    },
    {
       "gpsp_frame_mixing",
-      "Interframe Blending",
-      "Simulates LCD ghosting effects by performing a 50:50 mix of the current and previous frames. Required for correct operation when playing games that exploit LCD ghosting for transparency effects (F-Zero, the Boktai series, etc.).",
+      "帧间混合",
+      "模拟 LCD 重影效果，通过执行当前帧与上一帧的 50:50 混合。在播放利用 LCD 重影实现透明效果的游戏（如 F-Zero、Boktai 系列等）时，正确运行所需的条件。",
       {
-         { "enabled",  NULL },
-         { "disabled", NULL },
+         { "enabled",  "开启" },
+         { "disabled", "关闭" },
          { NULL, NULL },
       },
       "disabled"
    },
    {
       "gpsp_turbo_period",
-      "Turbo Button Period",
-      "Specify the repeat interval (in frames) when holding down the Turbo A/B buttons.",
+      "连发间隔",
+      "指定按下 Turbo A/B 按钮时的重复间隔（以帧为单位）。",
       {
+         { "1",   NULL },
+         { "2",   NULL },
+         { "3",   NULL },
          { "4",   NULL },
          { "5",   NULL },
          { "6",   NULL },
