@@ -799,6 +799,7 @@ void retro_cheat_set(unsigned index, bool enabled, const char* code)
       show_warning_message("不支持的金手指类型!", 2500);
       break;
    case CheatNoError:
+      show_warning_message("金手指生效成功!", 2500);
       break;
    };
 }
